@@ -1,22 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.6.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>ro.creativewool</groupId>
 	<artifactId>notification-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>notification-service</name>
 	<description>Demo project for Spring Boot</description>
+
+    <scm>
+        <connection>scm:git:git@git.com:TatianaPituscan/notification-service.git</connection>
+        <developerConnection>scm:git:git@git.com:TatianaPituscan/notification-service.git</developerConnection>
+        <url>https://github.com/TatianaPituscan/notification-service</url>
+        <tag>HEAD</tag>
+    </scm>
 
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+
+	<distributionManagement>
+		<repository>
+			<id>bintray-taniapit-m2</id>
+			<name>taniapit-m2</name>
+			<url>https://api.bintray.com/maven/taniapit/m2/${artifactId}/;publish=1</url>
+		</repository>
+	</distributionManagement>
 
 	<dependencies>
 		<dependency>
