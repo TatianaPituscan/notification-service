@@ -13,7 +13,7 @@
 
 	<groupId>ro.creativewool</groupId>
 	<artifactId>notification-service</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>notification-service</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -32,7 +32,7 @@
 		<repository>
 			<id>bintray-taniapit-m2</id>
 			<name>taniapit-m2</name>
-			<url>https://api.bintray.com/maven/taniapit/m2/${artifactId}/;publish=1</url>
+			<url>https://api.bintray.com/maven/taniapit/m2/${project.artifactId}e/;publish=1</url>
 		</repository>
 	</distributionManagement>
 
@@ -45,6 +45,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -52,10 +53,22 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
