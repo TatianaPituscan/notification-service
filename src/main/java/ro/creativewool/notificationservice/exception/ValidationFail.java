@@ -21,7 +21,7 @@ public class ValidationFail {
     @Override
     public String toString() {
         return "{" +
-                "field=" + field + '\'' +
+                "field='" + field + '\'' +
                 ", message='" + message + '\'' +
                 '}';
     }
