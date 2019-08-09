@@ -13,8 +13,7 @@ import java.util.List;
 public class EmailValidatorService {
 
     private StringsHelper stringsHelper;
-    private String regex_TO_FOR = "^[A-Za-z0-9+_.-]+@(.+)$";
-    private String regex_MES_SUBJ = "^(?:\\b\\w+\\b[\\s\\r\\n]*){1,250}$";
+    private String emailRegex = "^[A-Za-z0-9+_.-]+@(.+)$";
 
    public EmailValidatorService(StringsHelper stringsHelper) {
     this.stringsHelper = stringsHelper;
@@ -25,26 +24,22 @@ public class EmailValidatorService {
 
         if (stringsHelper.isNullOrEmpty(emailRequest.getTo())) {
             fails.add(new ValidationFail("to", "cannot be null or empty"));
-        } else if (!emailRequest.getTo().matches(regex_TO_FOR)) {
-            fails.add((new ValidationFail("to", "not corresponding to necessary conditions")));
+        } else if (!emailRequest.getTo().matches(emailRegex)) {
+            fails.add((new ValidationFail("to", "does not seems to be a e-mail address")));
         }
 
         if (stringsHelper.isNullOrEmpty(emailRequest.getFrom())) {
             fails.add(new ValidationFail("from", "cannot be null or empty"));
-        } else if (!emailRequest.getTo().matches(regex_TO_FOR)) {
-            fails.add((new ValidationFail("from", "not corresponding to necessary conditions")));
+        } else if (!emailRequest.getFrom().matches(emailRegex)) {
+            fails.add((new ValidationFail("from", "does not seems to be a e-mail address")));
         }
 
         if (stringsHelper.isNullOrEmpty(emailRequest.getSubject())) {
             fails.add(new ValidationFail("subject", "cannot be null or empty"));
-        } else if (!emailRequest.getTo().matches(regex_MES_SUBJ)) {
-            fails.add((new ValidationFail("subject", "not corresponding to necessary conditions")));
         }
 
         if (stringsHelper.isNullOrEmpty(emailRequest.getMessage())) {
             fails.add(new ValidationFail("message", "cannot be null or empty"));
-        } else if (!emailRequest.getTo().matches(regex_MES_SUBJ)) {
-            fails.add((new ValidationFail("message", "not corresponding to necessary conditions")));
         }
 
         if (fails.size() > 0) {
