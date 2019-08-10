@@ -64,20 +64,24 @@
 			<scope>test</scope>
 		</dependency>
 
+
 		<dependency>
 			<groupId>org.jetbrains</groupId>
 			<artifactId>annotations</artifactId>
-			<version>RELEASE</version>
+			<version>17.0.0</version>
 			<scope>compile</scope>
 		</dependency>
     </dependencies>
 
 	<build>
+		<finalName>app</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+
 		</plugins>
 	</build>
 
