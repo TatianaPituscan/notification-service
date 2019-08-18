@@ -26,6 +26,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<docker.image.prefix>creativewool</docker.image.prefix>
 	</properties>
 
 	<distributionManagement>
@@ -81,15 +82,19 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
-			<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-deploy-plugin</artifactId>
-			<version>2.8.2</version>
-			</plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.0.0-M1</version>
+            </plugin>
 
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>dockerfile-maven-plugin</artifactId>
+				<configuration>
+					<repository>https://api.bintray.com/maven/taniapit/m2/${project.artifactId}e/;publish=1</repository>
+				</configuration>
 				<version>1.4.10</version>
 			</plugin>
 
